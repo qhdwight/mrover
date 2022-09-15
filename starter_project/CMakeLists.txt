@@ -5,7 +5,7 @@
 
 add_message_files(
         FILES
-        # Add your new message here
+        StarterProjectTag.msg
 )
 
 # Collect all cpp files in the src subdirectory to be used for perception
@@ -16,6 +16,8 @@ add_executable(starter_project_perception ${STARTER_PROJECT_PERCEPTION_SOURCES})
 add_dependencies(starter_project_perception ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 # Link needed libraries
 target_link_libraries(starter_project_perception ${catkin_LIBRARIES} ${OpenCV_LIBS})
+
+#target_compile_options(starter_project_perception PRIVATE -std=c++20)
 
 # Install our executable so that ROS knows about it
 # This allows us to launch it with rosrun
